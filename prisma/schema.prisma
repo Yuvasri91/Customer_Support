@@ -94,6 +94,7 @@ model TicketMessage {
 
   ticket    Ticket   @relation("TicketMessages", fields: [ticketId], references: [id], onDelete: Cascade)
   sender    User     @relation("UserMessages", fields: [senderId], references: [id])
+   isInternal Boolean @default(false)
 }
 
 model TicketActivity {
